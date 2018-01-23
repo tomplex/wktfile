@@ -1,6 +1,5 @@
 package wktfile
 
-
 import (
 	"testing"
 )
@@ -10,14 +9,13 @@ const (
 )
 
 var (
-	testHeader = []string{"point_id", "wkt"}
+	testHeader  = []string{"point_id", "wkt"}
 	testContent = [][]string{
-		{"1", "POINT(-72.549738631281 43.724067830418)",},
-		{"2", "POINT(-73.3208999067471 44.9213993671176)",},
-		{"3", "POINT(-72.3267250008435 44.3847434287252)",},
+		{"1", "POINT(-72.549738631281 43.724067830418)"},
+		{"2", "POINT(-73.3208999067471 44.9213993671176)"},
+		{"3", "POINT(-72.3267250008435 44.3847434287252)"},
 	}
 )
-
 
 func headersMatch(t *testing.T, wkt *WKTFile) {
 	for i, col := range wkt.Header {
@@ -36,8 +34,6 @@ func contentsMatch(t *testing.T, wkt *WKTFile) {
 		}
 	}
 }
-
-
 
 func TestReadDefault(t *testing.T) {
 	testFile := testDataDir + "test_points.wkt"

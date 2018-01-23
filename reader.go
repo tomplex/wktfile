@@ -2,8 +2,8 @@
 package wktfile
 
 import (
-	"os"
 	"encoding/csv"
+	"os"
 )
 
 var defaults = [2]func(*WKTFile) error{PipeDelimited, HasHeader}
@@ -11,16 +11,15 @@ var defaults = [2]func(*WKTFile) error{PipeDelimited, HasHeader}
 // WKTFile is the main type provided by package wkt. It provides a thin wrapper over a file, reading the contents into
 // a slice of []string's representing rows. It also provides access to the source file path and the header (if it has one).
 type WKTFile struct {
-	FilePath string // the full path of the input file
-	Header []string // the file's header
-	Rows [][]string // the file's data: a slice of
+	FilePath string     // the full path of the input file
+	Header   []string   // the file's header
+	Rows     [][]string // the file's data: a slice of
 
 	// Private helpers defining WKTFile parse behavior
 
 	delimiter rune // the delimiter for this file. Will default to '|'
 	hasheader bool
 }
-
 
 // Read reads and parses a standard text-based WKT file, allowing the caller to specify some common options for parsing.
 // It returns a WKTFile representation of the input file.
