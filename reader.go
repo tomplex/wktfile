@@ -96,7 +96,7 @@ func TabDelimiter(wkt *WKTFile) error {
 	return nil
 }
 
-// CustomDelimiter isa functional parameter to Read() which allows the user to specify a custom delimiter for a file.
+// CustomDelimiter isa functional parameter to Read() which allows the user to specify a custom delimiter for a WKT file.
 func CustomDelimiter(delimiter rune) func(wkt *WKTFile) error {
 	return func(wkt *WKTFile) error {
 		wkt.delimiter = delimiter
@@ -104,13 +104,13 @@ func CustomDelimiter(delimiter rune) func(wkt *WKTFile) error {
 	}
 }
 
-// FileHasHeader is a functional parameter to Read() which specifies that the file has a header.
+// FileHasHeader is a functional parameter to Read() which specifies that the WKT file has a header.
 func FileHasHeader(wkt *WKTFile) error {
 	wkt.hasheader = true
 	return nil
 }
 
-// FileNoHeader is a functional parameter to Read() which specifies that the file does not have a header.
+// FileNoHeader is a functional parameter to Read() which specifies that the WKT file does not have a header.
 func FileNoHeader(wkt *WKTFile) error {
 	wkt.hasheader = false
 	return nil
