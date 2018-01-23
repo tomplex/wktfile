@@ -55,7 +55,7 @@ func TestReadDefault(t *testing.T) {
 func TestReadComma(t *testing.T) {
 	testFile := testDataDir + "test_points_comma.wkt"
 
-	wkt, err := Read(testFile, CommaDelimiter)
+	wkt, err := Read(testFile, CommaDelimited)
 	if err != nil {
 		t.Errorf("Could not read file")
 	}
@@ -68,7 +68,7 @@ func TestReadComma(t *testing.T) {
 func TestReadTab(t *testing.T) {
 	testFile := testDataDir + "test_points_tab.wkt"
 
-	wkt, err := Read(testFile, TabDelimiter)
+	wkt, err := Read(testFile, TabDelimited)
 	if err != nil {
 		t.Errorf("Could not read file")
 	}
@@ -94,7 +94,7 @@ func TestReadCustom(t *testing.T) {
 func TestReadNoHeader(t *testing.T) {
 	testFile := testDataDir + "test_points_noheader.wkt"
 
-	wkt, err := Read(testFile, FileNoHeader)
+	wkt, err := Read(testFile, HasNoHeader)
 	if err != nil {
 		t.Errorf("Could not read file")
 	}

@@ -59,13 +59,13 @@ Sometimes data doesn't follow normal standards. `wktfile` provides some useful h
 
 ```go
 // Specify a comma delimiter
-commaWKT, err := wktfile.Read("./testdata.wkt", wktfile.CommaDelimiter)
+commaWKT, err := wktfile.Read("./testdata.wkt", wktfile.CommaDelimited)
 
 // Specify a custom delimiter
 customWKT, err := wktfile.Read("./testdata.wkt", wktfile.CustomDelimiter(';'))
 
 // Speficy that the file has no header
-headlessWKT, err := wktfile.Read("./testdata.wkt", wktfile.FileNoHeader)
+headlessWKT, err := wktfile.Read("./testdata.wkt", wktfile.HasNoHeader)
 ```
 
 More information can be found in the [godoc](https://godoc.org/github.com/tomplex/wktfile).

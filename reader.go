@@ -6,7 +6,7 @@ import (
 	"encoding/csv"
 )
 
-var defaults = [2]func(*WKTFile) error{PipeDelimiter, FileHasHeader}
+var defaults = [2]func(*WKTFile) error{PipeDelimited, HasHeader}
 
 // WKTFile is the main type provided by package wkt. It provides a thin wrapper over a file, reading the contents into
 // a slice of []string's representing rows. It also provides access to the source file path and the header (if it has one).
@@ -78,20 +78,20 @@ func readfile(filepath string, delimiter rune) ([][]string, error) {
 
 }
 
-// PipeDelimiter is a functional parameter to Read() which specifies that the WKT file is delimited by '|' values.
-func PipeDelimiter(wkt *WKTFile) error {
+// PipeDelimited is a functional parameter to Read() which specifies that the WKT file is delimited by '|' values.
+func PipeDelimited(wkt *WKTFile) error {
 	wkt.delimiter = '|'
 	return nil
 }
 
-// CommaDelimiter is a functional parameter to Read() which specifies that the WKT file is delimited by ',' values.
-func CommaDelimiter(wkt *WKTFile) error {
+// CommaDelimited is a functional parameter to Read() which specifies that the WKT file is delimited by ',' values.
+func CommaDelimited(wkt *WKTFile) error {
 	wkt.delimiter = ','
 	return nil
 }
 
-// TabDelimiter is a functional parameter to Read() which specifies that the WKT file is delimited by '\t' values.
-func TabDelimiter(wkt *WKTFile) error {
+// TabDelimited is a functional parameter to Read() which specifies that the WKT file is delimited by '\t' values.
+func TabDelimited(wkt *WKTFile) error {
 	wkt.delimiter = '\t'
 	return nil
 }
@@ -104,14 +104,14 @@ func CustomDelimiter(delimiter rune) func(wkt *WKTFile) error {
 	}
 }
 
-// FileHasHeader is a functional parameter to Read() which specifies that the WKT file has a header.
-func FileHasHeader(wkt *WKTFile) error {
+// HasHeader is a functional parameter to Read() which specifies that the WKT file has a header.
+func HasHeader(wkt *WKTFile) error {
 	wkt.hasheader = true
 	return nil
 }
 
-// FileNoHeader is a functional parameter to Read() which specifies that the WKT file does not have a header.
-func FileNoHeader(wkt *WKTFile) error {
+// HasNoHeader is a functional parameter to Read() which specifies that the WKT file does not have a header.
+func HasNoHeader(wkt *WKTFile) error {
 	wkt.hasheader = false
 	return nil
 }
