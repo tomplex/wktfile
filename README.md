@@ -1,4 +1,6 @@
 ## wktfile - Go package for easy reading of WKT files
+[![Go Report Card](https://goreportcard.com/badge/github.com/tomplex/wktfile)](https://goreportcard.com/report/github.com/tomplex/wktfile)
+
 
 Package `wktfile` aims to make it easy to ingest and work with WKT files in Go.
 
