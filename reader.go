@@ -59,11 +59,10 @@ func Read(filepath string, options ...func(*WKTFile) error) (*WKTFile, error) {
 func readfile(filepath string, delimiter rune) ([][]string, error) {
 
 	file, err := os.Open(filepath)
-	defer file.Close()
-
 	if err != nil {
 		return nil, err
 	}
+	defer file.Close()
 
 	reader := csv.NewReader(file)
 	reader.Comma = delimiter
