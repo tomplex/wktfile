@@ -1,6 +1,6 @@
-### wktfile - Go library for easy reading of WKT files.
+## wktfile - Go package for easy reading of WKT files
 
-Package `wktfile` aims to make it easy to ingest and work with WKT files.
+Package `wktfile` aims to make it easy to ingest and work with WKT files in Go.
 
 Read the [godoc here](https://godoc.org/github.com/tomplex/wktfile).
 
