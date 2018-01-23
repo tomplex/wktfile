@@ -27,7 +27,7 @@ package main
 
 import (
     "fmt"
-    "github.com/tomplex/wktfile
+    "github.com/tomplex/wktfile"
 )
 
 func main() {
