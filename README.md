@@ -28,6 +28,7 @@ main.go
 package main
 
 import (
+    "os"
     "fmt"
     "github.com/tomplex/wktfile"
 )
@@ -37,6 +38,7 @@ func main() {
 
     if err != nil {
         fmt.Println("error reading file")
+        os.Exit(1)
     }
 
     fmt.Println(wkt.Header) // access the file's header as a []string
@@ -47,7 +49,7 @@ func main() {
         // do stuff with the geometry
     }
 
-    fmt.Println(wkt.FilePath)
+    fmt.Println(wkt.FilePath) // access the file's header
 
 }
 
